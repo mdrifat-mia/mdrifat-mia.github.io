@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Page not found – Slash Jobs BD</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f4f6fb;color:#1a2b4c;text-align:center;padding:24px}
+  h1{font-size:2rem;margin:0 0 .5rem}
+  p{margin:0 0 1.25rem;color:#55627a}
+  a{display:inline-block;background:#0066cc;color:#fff;text-decoration:none;padding:.75rem 1.5rem;border-radius:6px;font-weight:600}
+</style>
+</head>
+<body>
+<div id="msg" hidden>
+  <h1>Page not found</h1>
+  <p>This page does not exist. Let's get you back to the jobs.</p>
+  <a href="/slash-jobs-bd-website/">Go to Slash Jobs BD</a>
+</div>
+<script>
+  // Old pages link to /slash-jobs-bd-websitejobs/ (a slash is missing).
+  // Turn that into /slash-jobs-bd-website/jobs/ and send the visitor there.
+  var base = '/slash-jobs-bd-website';
+  var path = location.pathname;
+  if (path.indexOf(base) === 0 && path.charAt(base.length) !== '/' && path.length > base.length) {
+    location.replace(base + '/' + path.slice(base.length) + location.search + location.hash);
+  } else {
+    document.getElementById('msg').hidden = false;
+  }
+</script>
+</body>
+</html>
